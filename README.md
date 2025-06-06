@@ -131,6 +131,22 @@ api.getStickers("hello").then(async (stickerIds) => {
 
 See [examples](examples) folder for more details.
 
+## Simple Server Example
+
+Run `bun run build` to generate the library and then start the express server:
+
+```bash
+bun run server
+```
+
+Create `server/credentials.json` based on `server/credentials.example.json`.
+
+Available endpoints:
+
+- `POST /send` – send a message. Body should include `threadId`, `message`, and optional `type` (defaults to `ThreadType.User`).
+- `POST /api/:method` – call any API method with JSON body as arguments.
+- `GET /messages` – retrieve messages received since startup.
+
 ## Projects
 
 -   [MultiZlogin](https://github.com/ChickenAI/multizlogin) - Hệ thống quản lý đa tài khoản Zalo, hỗ trợ đăng nhập và quản lý nhiều tài khoản Zalo cùng lúc, tích hợp proxy và webhook.
